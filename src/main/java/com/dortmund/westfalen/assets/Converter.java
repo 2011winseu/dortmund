@@ -1,6 +1,7 @@
 package com.dortmund.westfalen.assets;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.lang.reflect.Field;
 
@@ -21,6 +22,7 @@ public class Converter {
                 for (Field srcfd : srcField) {
                     srcfd.setAccessible(true);
                     if (StringUtils.equals(dsfd.getName(), srcfd.getName())) {
+                        System.out.println(ToStringBuilder.reflectionToString(srcfd.get(src)));
                         dsfd.set(destination, srcfd.get(src));
                         break;
                     }
