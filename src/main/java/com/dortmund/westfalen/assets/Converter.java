@@ -22,8 +22,8 @@ public class Converter {
                 for (Field srcfd : srcField) {
                     srcfd.setAccessible(true);
                     if (StringUtils.equals(dsfd.getName(), srcfd.getName())) {
-                        System.out.println(ToStringBuilder.reflectionToString(srcfd.get(src)));
-                        dsfd.set(destination, srcfd.get(src));
+                        Object value = srcfd.get(src);
+                        dsfd.set(destination, value);
                         break;
                     }
                 }
