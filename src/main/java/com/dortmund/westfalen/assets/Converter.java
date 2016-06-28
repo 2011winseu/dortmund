@@ -12,8 +12,8 @@ public class Converter {
 
     public static void tranfer(Object src, Object dest) {
         try {
-            Object destination = Class.forName(dest.getClass().getName()).newInstance();
-            Class<?> clazz = destination.getClass();
+            //Object destination = Class.forName(dest.getClass().getName()).newInstance();
+            Class<?> clazz = dest.getClass();
             Field[] destField = clazz.getDeclaredFields();
             Field[] srcField = src.getClass().getDeclaredFields();
 
@@ -23,13 +23,11 @@ public class Converter {
                     srcfd.setAccessible(true);
                     if (StringUtils.equals(dsfd.getName(), srcfd.getName())) {
                         Object value = srcfd.get(src);
-                        dsfd.set(destination, value);
+                        dsfd.set(dest, value);
                         break;
                     }
                 }
             }
-            dest = destination;
-
         } catch (Exception e) {
             LogTools.logException(e);
         }
