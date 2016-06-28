@@ -17,7 +17,7 @@ public class Converter {
             Field[] destField = clazz.getDeclaredFields();
             for (Field dsfd : destField) {
                 dsfd.setAccessible(true);
-                for (Field srcfd : src.getClass().getFields()) {
+                for (Field srcfd : src.getClass().getDeclaredFields()) {
                     srcfd.setAccessible(true);
                     if (StringUtils.equals(srcfd.getName(), dsfd.getName())) {
                         dsfd.set(destination, srcfd.get(src));
