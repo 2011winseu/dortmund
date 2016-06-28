@@ -12,15 +12,17 @@ public class Converter {
     public static void tranfer(Object src, Object dest) {
         try {
             Object destination = Class.forName(dest.getClass().getName()).newInstance();
-            Class<?> clazz=destination.getClass();
-
+            Class<?> clazz = destination.getClass();
             Field[] destField = clazz.getDeclaredFields();
+            Field[] srcField = src.getClass().getDeclaredFields();
+
             for (Field dsfd : destField) {
                 dsfd.setAccessible(true);
-                for (Field srcfd : src.getClass().getDeclaredFields()) {
+                for (Field srcfd : srcField) {
                     srcfd.setAccessible(true);
-                    if (StringUtils.equals(srcfd.getName(), dsfd.getName())) {
+                    if (StringUtils.equals(dsfd.getName(), srcfd.getName())) {
                         dsfd.set(destination, srcfd.get(src));
+                        break;
                     }
                 }
             }
