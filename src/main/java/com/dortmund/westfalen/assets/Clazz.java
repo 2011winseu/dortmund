@@ -1,6 +1,5 @@
 package com.dortmund.westfalen.assets;
 
-import com.sun.deploy.util.ReflectionUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.beans.PropertyDescriptor;
