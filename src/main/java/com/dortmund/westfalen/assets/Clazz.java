@@ -5,6 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sunmingwei on 16/7/7.
@@ -30,6 +32,13 @@ public class Clazz {
             }
         } catch (Exception e) {
             Smartlog.logException(e);
+        }
+    }
+
+    public static void listTransfer(List<Object> srcs, List<Object> dests) {
+        int index = 0;
+        for (Object element : srcs) {
+            tranfer(element, dests.get(0));
         }
     }
 
