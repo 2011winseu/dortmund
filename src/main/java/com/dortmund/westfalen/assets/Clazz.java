@@ -35,11 +35,11 @@ public class Clazz {
         }
     }
 
-    public static List<Object> listTransfer(List<Object> srcs) {
+    public static List<Object> listTransfer(Object srcs) {
         List<Object> result = new ArrayList<Object>();
         int index = 0;
         Object bridge = new Object();
-        for (Object element : srcs) {
+        for (Object element : (List<?>)srcs) {
             tranfer(element, bridge);
             result.add(bridge);
         }
