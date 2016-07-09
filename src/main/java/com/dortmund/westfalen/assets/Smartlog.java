@@ -5,11 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by mingwei.smw on 2016/4/21.
+ * Created by sunmingwei on 16/7/9.
  */
-@Deprecated
-public class LogTools {
-    private static Logger selfLog = LoggerFactory.getLogger(LogTools.class);
+public class Smartlog {
+
+    private static Logger selfLog = LoggerFactory.getLogger(Smartlog.class);
 
     public static void logException(Exception e) {
         StackTraceElement[] ele = new Throwable().getStackTrace();
