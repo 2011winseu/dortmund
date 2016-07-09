@@ -29,7 +29,7 @@ public class Clazz {
                 }
             }
         } catch (Exception e) {
-            LogTools.logException(e);
+            Smartlog.logException(e);
         }
     }
 
@@ -39,9 +39,19 @@ public class Clazz {
             Method getter = propertyDescriptor.getReadMethod();
             return getter.invoke(object);
         } catch (Exception e) {
-            LogTools.logException(e);
+            Smartlog.logException(e);
         }
         return null;
+    }
+
+    public static void setObjectValueByPropertyName(String name, Object object, Object value) {
+        try {
+            PropertyDescriptor propertyDescriptor = new PropertyDescriptor(name, object.getClass());
+            Method writter = propertyDescriptor.getWriteMethod();
+            writter.invoke(object, value);
+        } catch (Exception e) {
+            Smartlog.logException(e);
+        }
     }
 
 }
