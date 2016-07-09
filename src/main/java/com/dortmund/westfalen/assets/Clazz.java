@@ -35,7 +35,7 @@ public class Clazz {
         }
     }
 
-    public static List<Object> listTransfer(Object srcs) {
+    public static Object listTransfer(Object srcs) {
         List<Object> result = new ArrayList<Object>();
         int index = 0;
         Object bridge = new Object();
