@@ -9,18 +9,20 @@ import com.dortmund.westfalen.assets.LogTools;
 public class TestClazz {
 
     public static void main(String[] args) {
-        test test = new test("xxx", "yyy");
-        Object object = Clazz.getObjectValueByPropertyName("value", test );
-        new LogTools();
+        WestFalen test = new WestFalen("xxx", "yyy");
+
+        Clazz.setObjectValueByPropertyName("url", test, "ttt");
+
+        new WestFalen("123", "234");
     }
 
-    private static class test {
+    private static class WestFalen {
 
         private String value;
 
         private String key;
 
-        public test(String key, String value) {
+        public WestFalen(String key, String value) {
             this.key = key;
             this.value = value;
         }

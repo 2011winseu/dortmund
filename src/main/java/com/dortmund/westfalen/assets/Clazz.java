@@ -44,14 +44,20 @@ public class Clazz {
         return null;
     }
 
-    public static void setObjectValueByPropertyName(String name, Object object, Object value) {
+    public static Boolean setObjectValueByPropertyName(String name, Object object, Object value) {
         try {
             PropertyDescriptor propertyDescriptor = new PropertyDescriptor(name, object.getClass());
             Method writter = propertyDescriptor.getWriteMethod();
+            if (writter == null) {
+                return false;
+            }
+            writter.setAccessible(true);
             writter.invoke(object, value);
         } catch (Exception e) {
             Smartlog.logException(e);
+            return false;
         }
+        return true;
     }
 
 }
