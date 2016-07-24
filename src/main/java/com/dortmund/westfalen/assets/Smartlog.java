@@ -16,9 +16,9 @@ public class Smartlog {
         selfLog.error("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",Exception:", e);
     }
 
-    public static void logError(String message) {
+    public static void logWarn(String message) {
         StackTraceElement[] ele = new Throwable().getStackTrace();
-        selfLog.error("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",ErrorMessage:" + message);
+        selfLog.warn("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",ErrorMessage:" + message);
     }
 
     public static void logException2AssignedFile(Logger assignedLog, Exception e) {
@@ -26,9 +26,9 @@ public class Smartlog {
         assignedLog.error("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",Exception:", e);
     }
 
-    public static void logError2AssignedFile(Logger assignedLog, String message) {
+    public static void logWarn2AssignedFile(Logger assignedLog, String message) {
         StackTraceElement[] ele = new Throwable().getStackTrace();
-        assignedLog.error("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",ErrorMessage:" + message);
+        assignedLog.warn("Clazz:" + getClassName(ele[1].getClassName()) + ",Method:" + ele[1].getMethodName() + ",Line number:" + ele[1].getLineNumber() + ",ErrorMessage:" + message);
     }
 
     private static String getClassName(String clzName) {
