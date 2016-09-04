@@ -15,10 +15,6 @@ public class Clazz {
 
     public static void tranfer(Object src, Object dest) {
         try {
-            if (src == null || dest == null) {
-                return;
-            }
-
             Class<?> clazz = dest.getClass();
             Field[] destField = clazz.getDeclaredFields();
             Field[] srcField = src.getClass().getDeclaredFields();
