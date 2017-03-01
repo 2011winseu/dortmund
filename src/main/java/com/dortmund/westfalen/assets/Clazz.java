@@ -35,16 +35,23 @@ public class Clazz {
         }
     }
 
+    @Deprecated
     public static Object listTransfer(Object srcs) {
         List<Object> result = new ArrayList<Object>();
         int index = 0;
         Object bridge = new Object();
         for (Object element : (List<?>)srcs) {
+
+
+
+
             tranfer(element, bridge);
             result.add(bridge);
         }
         return result;
     }
+
+
 
     public static Object getObjectValueByPropertyName(String name, Object object) {
         try {
@@ -72,5 +79,7 @@ public class Clazz {
         }
         return true;
     }
+
+
 
 }

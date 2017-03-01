@@ -1,0 +1,15 @@
+.project
+.classpath
+target/
+.settings/
+.externalToolBuilders/
+logs/
+
+
+*.class
+*.war
+
+*.iml
+/**/.idea
+/**/.git
+/**/.svn

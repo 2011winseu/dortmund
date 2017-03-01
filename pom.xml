@@ -12,7 +12,7 @@
 
     <groupId>com.dortmund.westfalen</groupId>
     <artifactId>dortmund-bestow</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>dortmund-bestow</name>
@@ -37,6 +37,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.2.6.RELEASE</version>
         </dependency>
     </dependencies>
 </project>
